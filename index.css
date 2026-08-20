@@ -1,6 +1,58 @@
+/* body section */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(243, 178, 58);
+}
+
+
+/* header section */
 .header{
     display:flex;
     justify-content: space-between;
+
+}
+
+.nav-links{
+    display: flex;
+    padding-top: 20px;
+    gap: 30px;
+    margin: 0px 50px ;
+
+}
+
+.nav-links a{
+    text-decoration: none;
+    font-weight: bold;
+    color:rgb(6, 94, 6);
+    font-size: large;
+}
+
+.nav-links a:hover{
+    text-decoration: underline;
+    color: rgb(23, 139, 15);
+    transform: scale(1.05);
+
+}
+
+/* hero section */
+.hero{
+    background-image: url('https://www.shutterstock.com/image-photo/girl-meet-food-delivery-man-260nw-2376122631.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+}
+
+.hero-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: orange;
+    margin-top: 100px;
+
 }
 
 
