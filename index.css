@@ -11,6 +11,9 @@ body{
 .header{
     display:flex;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    background-color: rgb(243, 178, 58);
 
 }
 
@@ -36,12 +39,14 @@ body{
 
 }
 
+
+
 /* hero section */
 .hero{
-    background-image: url('https://www.shutterstock.com/image-photo/girl-meet-food-delivery-man-260nw-2376122631.jpg');
+    background-image: url('images/Hero image.png');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 110vh;
     display: flex;
 }
 
@@ -50,14 +55,76 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: orange;
+    color: white;
     margin-top: 100px;
 
 }
+.order-now-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 500px;
+    margin-bottom: 20px;
+}
+button {
+    background-color:orange;
+    color: green;
+    border: none;
+    padding: 10px 20px;
+    font-size: large;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+button a{
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+}
+
+button a:hover{
+    background-color: rgb(243, 178, 58);
+    color: rgb(30, 125, 30);
+    transform: scale(1.05);
+}
 
 
+/* offer cards */
+.offer-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
 
+.offer-card{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+}
 
+.offer-card img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 
+.offer-card h3{
+    color: #333;
+    margin-bottom: 10px;
+}
 
-https://foodboda.com/public/assets/landing/assets_new/img/headerimg.png
+.offer-card p{
+    color: #666;
+    font-size: 14px;
+}
+
+h2{
+    text-align: center;
+    color: rgb(6, 94, 6);
+    margin-top: 30px;
+}
