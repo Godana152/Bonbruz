@@ -1,0 +1,329 @@
+:root {
+    --charcoal: #1F1B16;
+    --mustard: #E8A33D;
+    --tomato: #C1440E;
+    --paper: #F7EDE2;
+    --sage: #7A8B69;
+    --shadow: rgba(31, 27, 22, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--charcoal);
+    font-family: ui-sans-serif, system-ui, "Segoe UI", Arial, sans-serif;
+}
+
+.board {
+    position: relative;
+    overflow: hidden;
+    padding: 14px 0;
+    border-bottom: 4px solid var(--mustard);
+    background: var(--charcoal);
+}
+
+.board::before,
+.board::after {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    content: "";
+    pointer-events: none;
+}
+
+.board::before {
+    left: 0;
+    background: linear-gradient(to right, var(--charcoal), transparent);
+}
+
+.board::after {
+    right: 0;
+    background: linear-gradient(to left, var(--charcoal), transparent);
+}
+
+.board-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-rtl 22s linear infinite;
+}
+
+.board:hover .board-track {
+    animation-play-state: paused;
+}
+
+.item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 0 32px;
+    color: var(--paper);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.item .price {
+    color: var(--mustard);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.item .tag {
+    padding: 2px 8px;
+    border-radius: 2px;
+    background: var(--tomato);
+    color: var(--paper);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.item + .item::before {
+    margin-right: 22px;
+    color: var(--sage);
+    content: "•";
+}
+
+@keyframes scroll-rtl {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .board-track {
+        animation: none;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e4d9cc;
+    background: rgba(247, 237, 226, 0.9);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    color: var(--charcoal);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--tomato);
+}
+
+.ORDER {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 28px auto 8px;
+    padding: 13px 24px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--tomato);
+    color: var(--paper);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.ORDER:hover {
+    transform: translateY(-1px);
+    background: #a6370d;
+}
+
+.cart-count {
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: rgba(247, 237, 226, 0.18);
+    font-size: 0.72rem;
+    letter-spacing: 0;
+}
+
+.cart-status {
+    min-height: 1.5em;
+    margin: 0 auto 8px;
+    padding: 0 16px;
+    color: #5c5147;
+    text-align: center;
+}
+
+.popular-dishes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 22px 20px 60px;
+}
+
+.menu-intro {
+    padding: 34px 20px 8px;
+    text-align: center;
+}
+
+.menu-intro .eyebrow {
+    margin: 0 0 8px;
+    color: var(--tomato);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.menu-intro h1 {
+    margin: 0 0 8px;
+    color: var(--charcoal);
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    letter-spacing: -0.04em;
+}
+
+.menu-intro > p:not(.eyebrow, .cart-status) {
+    margin: 0 auto;
+    color: #5c5147;
+    font-size: 1.05rem;
+}
+
+.menu-intro .ORDER {
+    margin-top: 22px;
+}
+
+.popular-dishes > h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: var(--charcoal);
+    font-size: clamp(2rem, 3vw, 3rem);
+    letter-spacing: -0.04em;
+    text-align: center;
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #e5d8c8;
+    border-radius: 18px;
+    background: rgba(247, 237, 226, 0.9);
+    box-shadow: 0 12px 24px var(--shadow);
+}
+
+.dish > img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #eee5da;
+}
+
+.dish-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px;
+}
+
+.dish h3 {
+    margin: 0 0 10px;
+    color: var(--charcoal);
+    font-size: 1.35rem;
+}
+
+.dish-body > p:first-of-type {
+    min-height: 3em;
+    margin: 0 0 12px;
+    color: #4f453d;
+    line-height: 1.5;
+}
+
+.dish .price {
+    margin-bottom: 14px;
+    color: var(--tomato);
+    font-weight: 800;
+}
+
+.cart {
+    width: 100%;
+    margin-top: auto;
+    padding: 12px 14px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--charcoal);
+    color: var(--paper);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cart:hover {
+    transform: translateY(-1px);
+    background: var(--tomato);
+}
+
+.cart:focus-visible,
+.ORDER:focus-visible,
+nav a:focus-visible {
+    outline: 3px solid var(--mustard);
+    outline-offset: 3px;
+}
+
+footer {
+    padding: 20px 16px;
+    background: var(--charcoal);
+    color: var(--paper);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 860px) {
+    .popular-dishes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    nav ul {
+        gap: 16px;
+    }
+
+    .popular-dishes {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the Bonbruz menu, featuring Kenyan favorites, fresh juice, and more.">
+    <title>Bonbruz Menu</title>
+    <link rel="stylesheet" href="menu.css">
+    <script src="menu.js" defer></script>
+</head>
+
+<body>
+    <div class="board" aria-label="Menu highlights">
+        <div class="board-track" id="track"></div>
+    </div>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html" aria-current="page">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header class="menu-intro">
+            <p class="eyebrow">Made fresh at Bonbruz</p>
+            <h1>Our menu</h1>
+            <p>Find your favorite, made with care and served fresh.</p>
+            <button class="ORDER" id="order-button" type="button">
+                Order now <span class="cart-count" id="cart-count">0 items</span>
+            </button>
+            <p class="cart-status" id="cart-status" role="status" aria-live="polite"></p>
+        </header>
+
+        <section class="popular-dishes" aria-labelledby="dishes-heading">
+            <h2 id="dishes-heading">Popular dishes</h2>
+
+            <article class="dish">
+                <img src="https://imgs.search.brave.com/COq4-oaPuIUEodNYpV7wRpdyRck88yqBnQni1GkJ66k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjcv/Mjg5LzY4MC9zbWFs/bC9kZXRhaWxlZC1j/bG9zZS1zaG90LW9m/LWNoaWNrZW4tcHVs/YW8tZnJlZS1waG90/by5qcGc"
+                    alt="Chicken pilau with rice and spices" loading="lazy">
+                <div class="dish-body">
+                    <h3>Chicken Pilau</h3>
+                    <p>Spiced rice cooked with tender chicken and served with kachumbari.</p>
+                    <p class="price">KSh 450</p>
+                    <button class="cart" type="button">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="dish">
+                <img src="https://imgs.search.brave.com/YoqqT-FIR_kJ9rS2lNaS4_pEU3-xm578jBZxgTNtEts/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly80d2F5/Zm9vZHMuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDI1LzAz/L055YW1hLUNob21h/LSVFMiU4MCU5My1L/ZW55YXMtZmFtb3Vz/LWdyaWxsZWQtbWVh/dC1vZnRlbi1zZXJ2/ZWQtd2l0aC1rYWNo/dW1iYXJpLTEtNDYw/eDI2MC5qcGc"
+                    alt="Nyama choma served with a side" loading="lazy">
+                <div class="dish-body">
+                    <h3>Nyama Choma</h3>
+                    <p>Grilled meat served with ugali and greens.</p>
+                    <p class="price">KSh 800</p>
+                    <button class="cart" type="button">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="dish">
+                <img src="https://imgs.search.brave.com/t8uQKq0n0tMFLrbN2Hxb0IZYMvLAEynTaee_tw36Dp4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zaWx2/ZXJmZXJuZmFybXMu/Y29tL2Fkb2JlL2R5/bmFtaWNtZWRpYS9k/ZWxpdmVyL2RtLWFp/ZC0tYmJiZWI1M2Ut/YTQyYi00YzBlLWJm/OTAtYTdiZWEzNmQ4/ODhhL2JlZWYtYnVy/Z2Vycy13aXRoLWNh/cmFtZWxpemVkLW9u/aW9uLWFuZC1zd2Vl/dC1wb3RhdG8tZnJp/ZXMuanBnP3ByZWZl/cndlYnA9dHJ1ZSZx/dWFsaXR5PTYw"
+                    alt="Beef burger with fries" loading="lazy">
+                <div class="dish-body">
+                    <h3>Beef Burger &amp; Fries</h3>
+                    <p>Juicy beef patty with cheese, fresh vegetables, and crispy fries.</p>
+                    <p class="price">KSh 1,200</p>
+                    <button class="cart" type="button">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="dish">
+                <img src="https://imgs.search.brave.com/KWzK5nv09OWiAUeB4X8eHHZlw50d47UQXWt0fo2r2bE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/Y3JlYXRlLnZpc3Rh/LmNvbS9hcGkvbWVk/aWEvc21hbGwvNjM1/MTc0OTI2L3N0b2Nr/LXBob3RvLXRyYWRp/dGlvbmFsLW1pZGRs/ZS1lYXN0LXNuYWNr/LWZyaWVkLXN0dWZm/ZWQtc2Ftb3NhLXBp/ZS12ZWdldGFibGVz/LXNlcnZlZA"
+                    alt="Crispy samosa" loading="lazy">
+                <div class="dish-body">
+                    <h3>Samosa</h3>
+                    <p>Crispy pastry filled with spiced meat or vegetables.</p>
+                    <p class="price">KSh 50</p>
+                    <button class="cart" type="button">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="dish">
+                <img src="https://imgs.search.brave.com/hphl-AysbS7fWDOXQ4Im3rXOJrOmZXGIKZUjpZunQDQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90YXN0/eXRocmlmdHl0aW1l/bHkuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDI1LzA2L0No/YXBhdGktNi5qcGc"
+                    alt="Freshly made chapati" loading="lazy">
+                <div class="dish-body">
+                    <h3>Chapati</h3>
+                    <p>Soft wheat flatbread, perfect for wrapping or dipping.</p>
+                    <p class="price">KSh 100</p>
+                    <button class="cart" type="button">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="dish">
+                <img src="https://imgs.search.brave.com/aYBZjURmtb_ulbyRpFV6C8qVRSki8DfWQf1sOhhq-6c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/a2l0Y2hlbnNhbmN0/dWFyeS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDkv/UGlsYXUtUmljZS10/YWxsLUZTLTUud2Vi/cA"
+                    alt="Kenyan pilau rice" loading="lazy">
+                <div class="dish-body">
+                    <h3>Pilau</h3>
+                    <p>Fragrant rice seasoned with a rich blend of Kenyan spices.</p>
+                    <p class="price">KSh 300</p>
+                    <button class="cart" type="button">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="dish">
+                <img src="https://imgs.search.brave.com/KCA0swSOTis7rWr4ycU5KQU56exNpzLrpWDUh3wBkOo/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNDkv/MTA4LzY1NS9zbWFs/bC90aHJlZS1wbGFz/dGljLWN1cHMtb2Yt/ZnJ1aXQtanVpY2Ut/d2l0aC1hLXNwbGFz/aC1vbi1hLXllbGxv/dy1iYWNrZ3JvdW5k/LXBob3RvLmpwZWc1"
+                    alt="Glass of fresh orange juice" loading="lazy">
+                <div class="dish-body">
+                    <h3>Fresh Juice</h3>
+                    <p>A refreshing fruit blend for a cool, fruity drink.</p>
+                    <p class="price">KSh 200</p>
+                    <button class="cart" type="button">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="dish">
+                <img src="https://imgs.search.brave.com/rB8zWN8G3SUD58SDdjpPJoaKSCdsDA2klO5O8cT19b8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/dGhld29ybGRvbmFw/bGF0ZS5jby51ay9p/bWcvZGlzaGVzL3Rh/bnphbmlhL3VnYWxp/LW5hLW55YW1hLWNo/b21hLndlYnA"
+                    alt="Ugali served with grilled meat" loading="lazy">
+                <div class="dish-body">
+                    <h3>Ugali Choma</h3>
+                    <p>Classic ugali served with grilled meat and a tasty side.</p>
+                    <p class="price">KSh 350</p>
+                    <button class="cart" type="button">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="dish">
+                <img src="https://imgs.search.brave.com/qOGhmp6yJ4HeyhFGf3KE6nyiYwQpirA5eSdRx7uHawk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by90YXN0eS1h/ZnJpY2FuLWNoYXBh/dGktYmVhbi1zdGV3/LTI2MG53LTIwNDcw/Mzc2OTMuanBn"
+                    alt="Chapati served with beans" loading="lazy">
+                <div class="dish-body">
+                    <h3>Chapati Beans</h3>
+                    <p>Soft chapati served with warm, savory beans.</p>
+                    <p class="price">KSh 150</p>
+                    <button class="cart" type="button">Add to Cart</button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bonbruz. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
